@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('work_sessions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->uuid('user_id')->nullable();
             $table->dateTime('start_time');
             $table->dateTime('end_time')->nullable();
             $table->timestamps();
 
             // 外部キー制約（usersテーブルのidに対する）
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('set null');
         });
     }
 

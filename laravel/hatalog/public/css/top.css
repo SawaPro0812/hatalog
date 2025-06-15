@@ -1,0 +1,131 @@
+/* 全体の余白と背景 */
+body.container {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* タイトル */
+.title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* 合計時間 */
+.total-time-box {
+    font-size: 24pt;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* ボタングループ配置 */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ボタン共通 */
+.btn {
+    padding: 15px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+/* 勤務開始ボタン */
+.btn-start {
+    background-color: #28a745;
+    
+}
+.btn-start:hover {
+    background-color: #218838;
+}
+
+/* 勤務終了ボタン */
+.btn-end {
+    background-color: #dc3545;
+}
+.btn-end:hover {
+    background-color: #c82333;
+}
+
+/* テーブルエリア */
+.table-area {
+    width: 60%;
+    margin: 0 auto;
+	height:300px;
+	overflow-y:scroll;
+}
+
+/* テーブルエリア スクロールバー設定 */
+.table-area::-webkit-scrollbar {
+  width: 12px;
+}
+
+.table-area::-webkit-scrollbar-thumb {
+  background-color: #9f9f9f;
+  border-radius: 8px;
+}
+
+/* ログテーブル */
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.log-table thead { /* 1行目を固定 */
+    position:sticky;
+    top:0;
+    background:#99ccff;
+    z-index: 1;
+}
+
+.log-table th,
+.log-table td {
+    padding: 10px 0;
+    border: 1px solid #dee2e6;
+    text-align: center;
+    font-size: 16pt;
+}
+
+.log-table th {
+    background-color: #f1f3f5;
+    font-weight: bold;
+}
+
+/* トースト通知 */
+.toast-message {
+    visibility: hidden;
+    min-width: 250px;
+    max-width: 90%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px 24px;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 17px;
+    opacity: 0;
+    transition: opacity 0.6s ease, bottom 0.6s ease;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.toast-message.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
