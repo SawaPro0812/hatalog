@@ -1,5 +1,5 @@
 services:
-  # MySQLのコンテナ
+  # MySQL
   db:
     build: ./docker/mysql
     container_name: db-container
@@ -14,7 +14,7 @@ services:
     ports:
       - '3306:3306'
 
-  # アプリのコンテナ
+  # Laravel + PHP + Node.js
   app:
     build: ./docker/php
     container_name: app-container
@@ -22,14 +22,15 @@ services:
       - ./docker/php/php.ini:/usr/local/etc/php/php.ini
       - ./laravel/hatalog:/var/www
     ports:
-      - '3000:80'     # laravelのポート（バックエンド）
-      - '5173:5173'   # viteのポート（フロントエンド）
+      - '3000:80'     # Laravel
+      - '5173:5173'   # Vite (HMR)
     expose:
       - 9003
     depends_on:
       - db
+    command: sh -c "npm install && npm run dev & apache2-foreground"
 
-  # MySQLのクライアントツール
+  # Adminer
   adminer:
     image: adminer:latest
     ports:

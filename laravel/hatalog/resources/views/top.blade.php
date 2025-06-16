@@ -13,6 +13,10 @@
     <script src="{{ asset('/js/top.js') }}"></script>
 </head>
 <body class="container">
+    <div class="top-header">
+        <a href="/login" class="login-link link">ログイン</a>
+        <a href="/help" class="link">使用方法</a>
+    </div>
     <h1 class="title">働ログ</h1>
     <div class="total-time-box">
         <div id="total-time">合計勤務時間： <span id="total-time-value">00:00:00</span></div>

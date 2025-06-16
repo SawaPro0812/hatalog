@@ -7,6 +7,27 @@ body.container {
     color: #333;
 }
 
+/* ヘッダーリンク */
+.top-header {
+    text-align: right;
+    padding: 0 2rem;
+}
+
+.link {
+    font-size: 12pt;
+    text-decoration: none;
+    color: gray;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: skyblue;
+}
+
+.login-link {
+    margin-right: 10px;
+}
+
 /* タイトル */
 .title {
     font-size: 2rem;
@@ -128,4 +149,44 @@ body.container {
     visibility: visible;
     opacity: 1;
     bottom: 50px;
+}
+
+/* レスポンシブ（iPhone15） */
+@media screen and (max-width: 600px) {
+    body.container {
+        padding: 1rem;
+    }
+
+    .total-time-box {
+        font-size: 18pt;
+    }
+
+    .button-group {
+
+        gap: 0.75rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .table-area {
+        width: 100%;
+        height: 250px;
+    }
+
+    .log-table th,
+    .log-table td {
+        font-size: 14pt;
+        padding: 8px 0;
+    }
+
+    .toast-message {
+        font-size: 15px;
+        padding: 12px 18px;
+        max-width: 95%;
+    }
 }
