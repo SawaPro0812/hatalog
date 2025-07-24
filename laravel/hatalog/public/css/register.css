@@ -1,0 +1,74 @@
+/* 全体レイアウト */
+.register-container {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* ヘッダーリンク */
+.register-header {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.link {
+    font-size: 12pt;
+    text-decoration: none;
+    color: gray;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: skyblue;
+}
+
+/* タイトル */
+.register-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* フォーム */
+.register-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 入力欄 */
+.register-input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* ボタン共通 */
+.btn {
+    padding: 15px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+/* 登録ボタン（緑） */
+.btn-start {
+    background-color: #28a745;
+}
+.btn-start:hover {
+    background-color: #218838;
+}
+
+/* フッター */
+.register-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+}

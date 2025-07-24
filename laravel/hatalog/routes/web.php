@@ -3,8 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\SessionManageController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
@@ -19,12 +19,11 @@ Route::get('/', [TopController::class, 'index'])->name('top.index');
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('registrer.create');
 // ユーザ新規登録処理
 Route::post('/register/create', [RegisteredUserController::class, 'store'])->name('registrer.store');
-// ログイン画面表示
-Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
-// ログイン処理
-Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 // ヘルプ画面表示
 Route::get('/help', [TopController::class, 'index'])->name('top.index');
+// 勤務履歴確認画面
+Route::get('/history', [HistoryController::class, 'index'])->name('history.index');
+
 
 // API
 Route::group(['prefix' => 'api', 'as' => 'api.'], function() {

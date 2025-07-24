@@ -8,7 +8,7 @@ use App\Services\SessionManageService;
 
 class SessionManageController extends Controller
 {
-     protected $service;
+    protected $service;
 
     public function __construct(SessionManageService $service)
     {

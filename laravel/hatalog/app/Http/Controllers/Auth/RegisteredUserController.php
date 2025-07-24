@@ -31,11 +31,13 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'user_id' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            //'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
+            'name' => $request->name,
             'user_id' => $request->user_id,
             'email' => $request->email,
             'password' => Hash::make($request->password),
@@ -45,6 +47,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('/', absolute: false));
+        return redirect(route('top.index', absolute: false));
     }
 }

@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <title>ログイン</title>
+    <meta charset="UTF-8">
+    <title>ログイン - 働ログ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ asset('/css/login.css') }}">
 </head>
-<body>
-    <h1>ログイン</h1>
-    <form method="POST" action="{{ route('login') }}">
+<body class="login-container">
+    <div class="login-header">
+        <a href="/" class="link">トップへ戻る</a>
+    </div>
+
+    <h1 class="login-title">ログイン</h1>
+
+    <form method="POST" action="{{ route('login') }}" class="login-form">
         @csrf
-        <input type="text" name="login" placeholder="メールアドレス" required>
-        <input type="password" name="password" placeholder="パスワード" required>
-        <button type="submit">ログイン</button>
+
+        <input type="text" name="login" placeholder="メールアドレス" required class="login-input">
+        <input type="password" name="password" placeholder="パスワード" required class="login-input">
+
+        <button type="submit" class="btn btn-start">ログイン</button>
     </form>
-    <a href="{{ route('register') }}">新規登録</a>
+
+    <div class="login-footer">
+        <a href="{{ route('register') }}" class="link">新規登録はこちら</a>
+    </div>
 </body>
 </html>

@@ -17,6 +17,11 @@ services:
   # Laravel + PHP + Node.js
   app:
     build: ./docker/php
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
     container_name: app-container
     volumes:
       - ./docker/php/php.ini:/usr/local/etc/php/php.ini

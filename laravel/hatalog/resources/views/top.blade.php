@@ -14,7 +14,18 @@
 </head>
 <body class="container">
     <div class="top-header">
-        <a href="/login" class="login-link link">ログイン</a>
+        {{-- ログインしていない場合 --}}
+        @guest
+            <a href="/login" class="login-link link">ログイン</a>
+        @endguest
+        {{-- ログインしている場合 --}}
+        @auth
+            <a href="/history" class="link">勤務履歴</a>
+            <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                @csrf
+                <button type="submit" class="login-link link">ログアウト</button>
+            </form>
+        @endauth
         <a href="/help" class="link">使用方法</a>
     </div>
     <h1 class="title">働ログ</h1>
